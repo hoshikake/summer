@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function IdentityProviders()
+    {
+        // IdentityProviderモデルと紐付ける 1対多の関係
+        // ... とは言うものの今回はGithubのみだからhasmanyじゃなくても良さそう
+        return $this->hasMany(IdentityProvider::class);
+    }
+
 }
