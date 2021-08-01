@@ -17,5 +17,3 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 // ユーザー登録のルーティングをとりやめている
-
-Route::get('/home', 'HomeController@index')->name('home');
