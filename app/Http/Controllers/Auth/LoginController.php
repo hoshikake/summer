@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Socialite;
+use App\IdentityProvider;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -40,6 +44,7 @@ class LoginController extends Controller
 
     public function redirectToProvider($social)
     {
+        dd(Socialite::driver($social)->redirect());
         return Socialite::driver($social)->redirect();
     }
 
@@ -58,6 +63,7 @@ class LoginController extends Controller
         }
         Auth::login($authUser, true);
         return redirect($this->redirectTo);
+
     }
 
     /**
