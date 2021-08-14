@@ -44,7 +44,7 @@ class LoginController extends Controller
 
     public function redirectToProvider($social)
     {
-        dd(Socialite::driver($social)->redirect());
+        // dd(Socialite::driver($social)->redirect());
         return Socialite::driver($social)->redirect();
     }
 
