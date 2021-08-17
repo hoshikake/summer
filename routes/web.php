@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes(['register' => false]);
@@ -22,3 +22,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->where('provider', 'github');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->where('provider', 'github');
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('edit', 'UserController@edit')->name('edit');
+    Route::put('/{user}', 'UserController@update')->name('update');
+
+    Route::resource('posts', 'PostController');
+    Route::resource('comments', 'CommentController', ['except' => ['index', 'create', 'show', 'store']]);
+    Route::get('/comments/{post}', 'CommentController@index')->name('comments.index');
+    Route::post('/comments/{post}', 'CommentController@store')->name('comments.store');
+});
