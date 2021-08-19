@@ -5,6 +5,10 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * @property int $id ID
@@ -22,14 +26,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -49,11 +46,38 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function IdentityProviders()
+    public function identityProviders(): HasMany
     {
         // IdentityProviderモデルと紐付ける 1対多の関係
         // ... とは言うものの今回はGithubのみだからhasmanyじゃなくても良さそう
         return $this->hasMany(IdentityProvider::class);
     }
 
+    public function getTwitterUrlAttribute(): string
+    {
+        if ($this->twitter_id) {
+            return "https://twitter.com/" . $this->twitter_id;
+        }
+        return '';
+    }
+
+    public function getIsPostedAttribute(): bool
+    {
+        return $this->posts()->exists();
+    }
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    /**
+     * ポートフォリオ(一人一つ前提とのなので)
+     *
+     * @return Post
+     */
+    public function getPostAttribute(): Post
+    {
+        return $this->posts()->first();
+    }
 }
