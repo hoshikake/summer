@@ -20,6 +20,7 @@ $breakpoints: (
 
 body {
     height: 100%;
+    background-color:  linear-gradient(90deg, $navy 0%, $navy 50%, $black 50%, $black 100%);;
     a {
         text-decoration: none;
     }

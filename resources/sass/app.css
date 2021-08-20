@@ -9,6 +9,7 @@
 
 body {
   height: 100%;
+  background-color: linear-gradient(90deg, #0b1c41 0%, #0b1c41 50%, #222222 50%, #222222 100%);
 }
 
 body a {
