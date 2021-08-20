@@ -3,7 +3,7 @@
     border: 0;
     padding: 0;
     text-align: center;
-    color: #333;
+    color: #ddd;
 }
 
 $breakpoints: (
@@ -20,10 +20,13 @@ $breakpoints: (
 
 body {
     height: 100%;
-    background-color:  linear-gradient(90deg, $navy 0%, $navy 50%, $black 50%, $black 100%);;
     a {
         text-decoration: none;
     }
+}
+
+.top-wrapper{
+    background-color:  linear-gradient(90deg, $navy 0%, $navy 50%, $black 50%, $black 100%);
 }
 
 .content {

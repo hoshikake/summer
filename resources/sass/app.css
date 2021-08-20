@@ -4,16 +4,19 @@
   border: 0;
   padding: 0;
   text-align: center;
-  color: #333;
+  color: #ddd;
 }
 
 body {
   height: 100%;
-  background-color: linear-gradient(90deg, #0b1c41 0%, #0b1c41 50%, #222222 50%, #222222 100%);
 }
 
 body a {
   text-decoration: none;
+}
+
+.top-wrapper {
+  background-color: linear-gradient(90deg, #0b1c41 0%, #0b1c41 50%, #222222 50%, #222222 100%);
 }
 
 .content .title {
