@@ -72,13 +72,6 @@
         </div>
     </div>
     @yield('content')
-    <div class="bubbles">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-    </div>
 
 </body>
 
