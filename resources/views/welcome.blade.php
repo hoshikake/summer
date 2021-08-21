@@ -29,6 +29,7 @@
                 </div>
                 <div class="content-text">
                     <h2>企画内容</h2>
+                    {{-- リンク飛ばない --}}
                     <a href="hoshikake.site">
                         <p><span>第一回：星駆水族館</span> <span class="content-text-none">（制作期間：6/12～7/2　掲示期間：7/3～）</span></p>
                     </a>
