@@ -28,7 +28,7 @@ body {
 }
 
 .top-wrapper {
-    background-color: linear-gradient(45deg, $navy 0%, $navy 50%, $black 50%, $black 100%);
+    background: linear-gradient(45deg, navy 0%, navy 50%, black 50%, black 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@ body {
 
 .content {
     .title {
-        padding-top: 5em;
+        padding-top: 5vh;
         font-family: $font-family-title;
         span {
             display: inherit;
@@ -47,9 +47,9 @@ body {
     }
     .login a {
         display: block;
-        padding: 1em 2em;
+        padding: 2vw 2vw;
         margin: 0 auto;
-        margin-top: 4em;
+        margin-top: 4vw;
         background-color: #444;
         color: #ddd;
         border-radius: 10px;
