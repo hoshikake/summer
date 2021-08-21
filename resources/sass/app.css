@@ -20,7 +20,7 @@ body a {
 }
 
 .top-wrapper {
-  background: linear-gradient(45deg, navy 0%, navy 50%, black 50%, black 100%);
+  background: linear-gradient(45deg, #0b1c41 0%, #0b1c41 50%, #222222 50%, #222222 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
