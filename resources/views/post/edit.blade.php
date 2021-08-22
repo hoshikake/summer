@@ -22,7 +22,7 @@
                 class="site-form-text"
                 id="work_url" name="work_url"
                 value="{{ old('work_url', $post->work_url) }}"
-                readonly>
+                >
             @if ($errors->has('work_url'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('work_url') }}</strong>
@@ -35,7 +35,7 @@
                 class="site-form-text"
                 id="repo_url" name="repo_url"
                 value="{{ old('repo_url', $post->repo_url) }}"
-                readonly>
+                >
             @if ($errors->has('repo_url'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('repo_url') }}</strong>
@@ -46,7 +46,7 @@
 
             <label class="site-comment" for="comment">コメント</label>
             <textarea class="site-textarea"
-                id="comment" name="comment" rows="3" readonly>{{ old('comment', $post->comment) }}</textarea>
+                id="comment" name="comment" rows="3">{{ old('comment', $post->comment) }}</textarea>
             @if ($errors->has('comment'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('comment') }}</strong>

@@ -22,7 +22,7 @@
                 class="site-form-text"
                 id="work_url" name="work_url"
                 value="{{ old('work_url') }}"
-                readonly>
+                >
             @if ($errors->has('work_url'))
                 <div class="">
                     <strong>{{ $errors->first('work_url') }}</strong>
@@ -36,7 +36,7 @@
                 class="site-form-text"
                 id="repo_url" name="repo_url"
                 value="{{ old('repo_url') }}"
-                readonly>
+                >
             @if ($errors->has('repo_url'))
                 <div class="">
                     <strong>{{ $errors->first('repo_url') }}</strong>
