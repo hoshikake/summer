@@ -332,11 +332,11 @@ $sub-color: #eee;
     .comment{
         overflow-wrap: break-word;
         width: 400px;
-        margin: 0 0 0 4rem;
+        margin: 0 0 0 6vw;
         color: #222;
         text-align: left;
         @include mq(sm){
-            width: 280px;
+            width: 260px;
         }
     }
     .comment-name{
