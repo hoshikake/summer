@@ -47,7 +47,7 @@
             {{-- コメント --}}
             <label class="site-comment" for="comment">コメント</label>
             <textarea class="site-textarea"
-                id="comment" name="comment" rows="3" readonly>{{ old('comment') }}</textarea>
+                id="comment" name="comment" rows="3">{{ old('comment') }}</textarea>
             @if ($errors->has('comment'))
                 <div>
                     <strong>{{ $errors->first('comment') }}</strong>
