@@ -127,6 +127,9 @@ $sub-color: #eee;
         background-color: rgba(238, 238, 238, 0.616);
         margin: 2em;
         border-radius: 10%;
+        @include mq(md){
+            margin: 1rem 0;
+        }
         .card-header{
             margin: 1em 4em 1em 4em;
             padding: 1em 0 1em 0;
@@ -154,6 +157,9 @@ $sub-color: #eee;
         width: 300px;
         overflow-wrap: break-word;
         margin: auto 2em;
+        @include mq(md){
+            margin: 0;
+        }
         p{
             text-align: left;
         }
