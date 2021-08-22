@@ -67,6 +67,13 @@ body {
         h2 {
             margin-top: 2em;
         }
+        a{
+            p{
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
         p {
             margin-top: 1em;
             .content-text-none {
