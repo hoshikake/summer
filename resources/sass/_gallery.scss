@@ -181,6 +181,7 @@ $sub-color: #eee;
             border-radius: 10px;
             padding: 0.5em 0;
             margin: 0 0.5em;
+            color: #222;
         }
         .twitter-btn{
             display: inline-block;
@@ -201,7 +202,7 @@ $sub-color: #eee;
 .site-container{
     .card{
         width: 300px;
-        height: 300px;
+        height: 280px;
         background-color: rgba(238, 238, 238, 0.616);
         margin: 2em auto;
         border-radius: 10%;
@@ -219,6 +220,7 @@ $sub-color: #eee;
                 display: block;
                 margin: 0 auto;
                 padding: 4px;
+                color: #222;
             }
             .site-comment{
                 display: block;
@@ -228,6 +230,7 @@ $sub-color: #eee;
                 border: 1px solid #333;
                 border-radius: 10px;
                 resize: none;
+                color: #222;
             }
             .site-checkbox{
                 margin: 1em;
@@ -284,10 +287,13 @@ $sub-color: #eee;
 
 .comment-container{
     background-color: rgba(238, 238, 238, 0.616);
-    margin: 5%;
+    margin: 5% 20%;
     margin-bottom: 3em;
     padding: 2em 0;
     border-radius: 45px;
+    @include mq(md){
+        margin: 5%;
+    }
     .comment-text{
         display: block;
         margin: 0.5em;
