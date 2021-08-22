@@ -154,6 +154,9 @@ $sub-color: #eee;
         width: 300px;
         overflow-wrap: break-word;
         margin: auto 2em;
+        p{
+            text-align: left;
+        }
     }
 }
 // Twitter登録
@@ -231,6 +234,8 @@ $sub-color: #eee;
                 border-radius: 10px;
                 resize: none;
                 color: #222;
+                padding: 2px;
+                text-align: left;
             }
             .site-checkbox{
                 margin: 1em;
@@ -307,6 +312,7 @@ $sub-color: #eee;
         border-radius: 10px;
         color: #222;
         resize: none;
+        text-align: left;
         @include mq(sm){
             width: 280px;
         }
@@ -322,6 +328,7 @@ $sub-color: #eee;
         width: 400px;
         margin: 0 auto;
         color: #222;
+        text-align: left;
         @include mq(sm){
             width: 280px;
         }
