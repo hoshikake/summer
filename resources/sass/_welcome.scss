@@ -76,8 +76,11 @@ body {
             }
         }
         a{
-            &:hover{
-                text-decoration: underline;
+            p{
+                &:hover{
+                    text-decoration: underline;
+                }
+
             }
         }
     }
