@@ -14,9 +14,7 @@ $sub-color: #eee;
         margin: 0 auto 3em auto;
     }
 }
-.flex-right{
-    justify-content: right;
-}
+
 
 .container{
     padding: 1em 0;
@@ -341,6 +339,10 @@ $sub-color: #eee;
         @include mq(sm){
             width: 280px;
         }
+    }
+    .comment-name{
+        text-align: right;
+        margin-right: 2rem;
     }
     a{
         color: #222;

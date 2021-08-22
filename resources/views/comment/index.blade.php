@@ -68,7 +68,7 @@
 
                     <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
                     <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
-                    <div class="flex">
+                    <div class="comment-name">
 
                         @if ($comment->user->twitter_id)
                             <a href="{{ $comment->user->twitter_url }}" class=""
