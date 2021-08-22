@@ -299,6 +299,7 @@ $sub-color: #eee;
         padding: 0.3em;
         border: 1px solid #333;
         border-radius: 10px;
+        color: #222;
         resize: none;
         @include mq(sm){
             width: 280px;
