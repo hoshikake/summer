@@ -94,11 +94,12 @@ $sub-color: #eee;
                 display: inline-block;
                 margin: 1em 2em 2em 2em;
                 padding: 1em 2em;
-                border: 1px solid #6b9cb2;
                 border-radius: 10px;
-                background-color: #57b2dc;
+                background-color: #222;
+                color: $sub-color;
                 &:hover{
-                    box-shadow: 2px 1px 2px #6989bb;
+                    background-color: $sub-color;
+                    color: #222;
                 }
             }
         }
@@ -138,13 +139,14 @@ $sub-color: #eee;
             font-size: 1em;
             padding: 0.2em;
             margin: 0.5em auto;
-            border: 1px solid #6b9cb2;
             border-radius: 10px;
-            background-color: #57b2dc;
+            background-color: #222;
+            color: $sub-color;
             display: block;
             width: 120px;
             &:hover{
-                box-shadow: 2px 1px 2px #6989bb;
+                background-color: $sub-color;
+                color: #222;
             }
         }
     }
@@ -184,11 +186,13 @@ $sub-color: #eee;
             display: inline-block;
             margin: 3em 2em 2em 2em;
             padding: 1em 2em;
-            border: 1px solid #6b9cb2;
             border-radius: 10px;
-            background-color: #57b2dc;
+            background-color: #222;
+            color: $sub-color;
             &:hover{
-                box-shadow: 2px 1px 2px #6989bb;
+                background-color: $sub-color;
+                color: #222;
+
             }
         }
     }
@@ -233,11 +237,12 @@ $sub-color: #eee;
                 .site-btn{
                     display: inline-block;
                     padding: 0.1em;
-                    border: 1px solid #6b9cb2;
                     border-radius: 10px;
-                    background-color: #57b2dc;
+                    background-color: #222;
+                    color: $sub-color;
                     &:hover{
-                        box-shadow: 2px 1px 2px #6989bb;
+                        background-color: $sub-color;
+                        color: #222;
                     }
                 }
             }
@@ -264,13 +269,14 @@ $sub-color: #eee;
             font-size: 1em;
             padding: 0.2em;
             margin: 0.5em auto;
-            border: 1px solid #6b9cb2;
             border-radius: 10px;
-            background-color: #57b2dc;
+            background-color: #222;
+            color: $sub-color;
             display: block;
             width: 120px;
             &:hover{
-                box-shadow: 2px 1px 2px #6989bb;
+                background-color: $sub-color;
+                color: #222;
             }
         }
     }
@@ -318,11 +324,12 @@ $sub-color: #eee;
     .comment-btn, .btn-update-comment, .btn-destroy-comment{
         display: inline-block;
         padding: 0.1em;
-        border: 1px solid #6b9cb2;
         border-radius: 10px;
-        background-color: #57b2dc;
+        background-color: #222;
+        color: $sub-color;
         &:hover{
-            box-shadow: 2px 1px 2px #6989bb;
+            background-color: $sub-color;
+            color: #222;
         }
     }
 }
