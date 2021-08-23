@@ -386,3 +386,15 @@ $sub-color: #eee;
         }
     }
 }
+.gallert-pagination{
+    .pagination{
+        .page-link{
+            color: #eee;
+        }
+        a{
+            &:hover{
+                color: #aaa;
+            }
+        }
+    }
+}

@@ -34,7 +34,9 @@
             @empty
                 <p>まだポートフォリオが登録されていません</p>
             @endforelse
-            {{ $posts->links() }}
+            <div class="gallery-pagination">
+                {{ $posts->links() }}
+            </div>
         </div>
     </div>
 @endsection
