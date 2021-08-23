@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js" defer></script>
+
 </head>
 <!-- クラス名好きにしていい -->
 
@@ -143,9 +142,6 @@
             </div>
         </div>
     </div>
-
-    <div class="top-wrapper">
-
         <div class="content">
             <div class="title">
                 <h1>
@@ -169,7 +165,6 @@
                 <p><span>第二回：花火大会・お化け屋敷</span> <span class="content-text-none">（制作期間：7/26　掲示期間：8/29～）</span></p>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
