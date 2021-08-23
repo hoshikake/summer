@@ -11,6 +11,8 @@
     <title>星駆web制作企画特設サイト</title>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js" defer></script>
     <script src="{{ mix('/js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -22,8 +24,6 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/icheck-bootstrap/3.0.1/icheck-bootstrap.min.css">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js" defer></script>
 </head>
 
 <body>
