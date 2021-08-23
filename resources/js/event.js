@@ -81,7 +81,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const X_AXIS = 2;
     let canvas;
     let fireworks = [];
-    let star = [];
+
+    windowResized()
+    setup()
+    draw()
 
     function windowResized() {
         resizeCanvas(document.documentElement.clientWidth / 2, document.documentElement.clientHeight);
