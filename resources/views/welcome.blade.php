@@ -8,10 +8,141 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js" defer></script>
     </head>
     <!-- クラス名好きにしていい -->
     <body>
         <div class="top-wrapper">
+            <canvas></canvas>
+    <div class="particles">
+        <canvas class="background"></canvas>
+    </div>
+    <div id="face">
+      <div class="tear">
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+
+          <div class="tear_right">
+              <div class="drops">
+                  <div class="drop"></div>
+              </div>
+          </div>
+      </div>
+
+
             <div class="content">
                 <div class="title">
                     <h1>
