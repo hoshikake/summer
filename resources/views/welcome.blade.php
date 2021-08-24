@@ -18,7 +18,7 @@
 <!-- クラス名好きにしていい -->
 
 <body>
-    <canvas></canvas>
+    <canvas id="firework"></canvas>
     <div class="particles">
         <canvas class="background"></canvas>
     </div>

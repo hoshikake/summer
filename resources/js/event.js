@@ -75,79 +75,49 @@ window.onload = function () {
 
 // 花火
 
-document.addEventListener('DOMContentLoaded', function() {
+const Y_AXIS = 1;
+const X_AXIS = 2;
+let canvas;
+let fireworks = [];
+let star = [];
 
-    const Y_AXIS = 1;
-    const X_AXIS = 2;
-    let canvas;
-    let fireworks = [];
+function windowResized() {
+    resizeCanvas(document.documentElement.clientWidth / 2, document.documentElement.clientHeight);
+}
 
-    windowResized()
-    setup()
-    draw()
+function setup() {
+    // キャンバスの設定
+    canvas = createCanvas(document.documentElement.clientWidth / 2, document.documentElement.clientHeight);
+    canvas.position(0, 0);
+    canvas.style("z-index", "-1");
+    colorMode(RGB);
+    frameRate(60);
 
-    function windowResized() {
-        resizeCanvas(document.documentElement.clientWidth / 2, document.documentElement.clientHeight);
+}
+
+function draw() {
+    // 背景色を設定
+    setGradient(0, 0, width, height, color(0, 0, 0), color(24, 32, 72), Y_AXIS);
+    noStroke();
+
+    // 花火を打ち上げる間隔を調整
+    if (0 === frameCount % 100) {
+        // 打ち上がるスピード
+        let speed = random(10, 30);
+        fireworks.push(new FireWork(random(width), height, 0, speed, 0.98));
     }
 
-    function setup() {
-        // キャンバスの設定
-        canvas = createCanvas(document.documentElement.clientWidth / 2, document.documentElement.clientHeight);
-        canvas.position(0, 0);
-        canvas.style("z-index", "-1");
-        colorMode(RGB);
-        frameRate(60);
-
-    }
-
-    function draw() {
-        // 背景色を設定
-        setGradient(0, 0, width, height, color(0, 0, 0), color(24, 32, 72), Y_AXIS);
-        noStroke();
-
-        // 花火を打ち上げる間隔を調整
-        if (0 === frameCount % 100) {
-            // 打ち上がるスピード
-            let speed = random(10, 30);
-            fireworks.push(new FireWork(random(width), height, 0, speed, 0.98));
+    for (let fw of fireworks) {
+        // 打ち切った花火を処理対象から外す（配列から削除する）
+        if (2 === fw.getType || 30000 < fw.getFrame) {
+            fireworks = fireworks.filter((n) => n !== fw);
+            continue;
         }
 
-        for (let fw of fireworks) {
-            // 打ち切った花火を処理対象から外す（配列から削除する）
-            if (2 === fw.getType || 30000 < fw.getFrame) {
-                fireworks = fireworks.filter((n) => n !== fw);
-                continue;
-            }
-
-            // 打ち上げアニメーションを呼び出す
-            fw.fire();
-        }
-    }
-
-    // グラデーションを描画
-function setGradient(x, y, w, h, c1, c2, axis) {
-    noFill();
-
-    if (axis === Y_AXIS) {
-        // Top to bottom gradient
-        for (let i = y; i <= y + h; i++) {
-            let inter = map(i, y, y + h, 0, 1);
-            let c = lerpColor(c1, c2, inter);
-            stroke(c);
-            line(x, i, x + w, i);
-        }
-    } else if (axis === X_AXIS) {
-        // Left to right gradient
-        for (let i = x; i <= x + w; i++) {
-            let inter = map(i, x, x + w, 0, 1);
-            let c = lerpColor(c1, c2, inter);
-            stroke(c);
-            line(i, y, i, y + h);
-        }
+        // 打ち上げアニメーションを呼び出す
+        fw.fire();
     }
 }
-});
-
 
 class FireWork {
     // 初期設定
@@ -381,6 +351,26 @@ class Afterimage {
     }
 }
 
+// グラデーションを描画
+function setGradient(x, y, w, h, c1, c2, axis) {
+    noFill();
 
-
+    if (axis === Y_AXIS) {
+        // Top to bottom gradient
+        for (let i = y; i <= y + h; i++) {
+            let inter = map(i, y, y + h, 0, 1);
+            let c = lerpColor(c1, c2, inter);
+            stroke(c);
+            line(x, i, x + w, i);
+        }
+    } else if (axis === X_AXIS) {
+        // Left to right gradient
+        for (let i = x; i <= x + w; i++) {
+            let inter = map(i, x, x + w, 0, 1);
+            let c = lerpColor(c1, c2, inter);
+            stroke(c);
+            line(i, y, i, y + h);
+        }
+    }
+}
 
