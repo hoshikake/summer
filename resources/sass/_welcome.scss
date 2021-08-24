@@ -1,63 +1,75 @@
-*{
+* {
     margin: 0;
     border: 0;
     padding: 0;
     text-align: center;
-    color: #333;
+    color: #ddd;
 }
 
 $breakpoints: (
-  'sm': 'screen and (max-width: 530px)',
-  'md': 'screen and (max-width: 740px)',
-  'lg': 'screen and (min-width: 1350px)',
-
+    "sm": "screen and (max-width: 530px)",
+    "md": "screen and (max-width: 740px)",
+    "lg": "screen and (min-width: 1350px)",
 ) !default;
 
-@mixin mq($breakpoint: md){
-    @media #{map-get($breakpoints, $breakpoint)}{
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
         @content;
     }
 }
 
-body{
+body {
     height: 100%;
-    a{
+    background-color: $black;
+    font-family: $font-family-text;
+    z-index: -50;
+    a {
         text-decoration: none;
     }
 }
 
-.content{
-    .title{
-        padding-top: 5em;
-        span{
+.content {
+    .title {
+        padding-top: 5vh;
+        font-family: $font-family-title;
+        span {
             display: inherit;
+            font-family: $font-family-title;
         }
     }
-    .login a{
+    .login a {
         display: block;
-        padding: 1em 2em;
+        padding: 2vw 2vw;
         margin: 0 auto;
-        margin-top: 4em;
-        border:1px solid #6b9cb2;
-        background-color: #57b2dc;
+        margin-top: 4vw;
+        background-color: #444;
+        color: #ddd;
         border-radius: 10px;
         width: 56px;
         height: 28px;
-        &:hover{
-            box-shadow: 2px 1px 2px #6989bb;
+        &:hover {
+            background-color: #ddd;
+            color: #444;
             text-decoration: none;
         }
     }
 
-    .content-text{
+    .content-text {
         margin-top: 2em;
-        h2{
+        h2 {
             margin-top: 2em;
         }
-        p{
+        a{
+            p{
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        p {
             margin-top: 1em;
-            .content-text-none{
-                @include mq(sm){
+            .content-text-none {
+                @include mq(sm) {
                     display: none;
                 }
             }
@@ -65,81 +77,107 @@ body{
     }
 }
 
-// 泡表現
-
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(rgb(159, 233, 233), rgb(7, 42, 83)) no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 100%;
-    background-attachment: fixed;
-    }
-
-.bubbles {
+// top装飾
+canvas.background {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
+    display: block;
     top: 0;
-    left: 0;
+    right: 0;
+    z-index: -3;
+    background-color: rgb(8, 8, 8);
+    background-image: url(imgs/skeleton.jpg);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 50%;
 }
 
-.bubble {
+.particles {
+    width: 50vw;
+}
+
+#face {
     position: absolute;
-    bottom: -40;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    animation: bubble 10s ease-in infinite;
+    top: 58%;
+    left: 75%;
+
+    .tear {
+        position: absolute;
+        width: 48vw;
+        height: 20vh;
+        transform: translate(-50%, -50%);
+        filter: blur(8px) contrast(30);
+
+        &_right {
+            .drops {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: 4%;
+
+                .drop {
+                    width: 2vw;
+                    height: 2vw;
+                    background: rgb(128, 5, 5);
+                    border-radius: 100%;
+                }
+            }
+            @for $i from 1 through 100 {
+                &:nth-child(#{$i}) {
+                    .drops {
+                        $speed: #{random(5000) + 3000}ms;
+                        animation: horizontalRight $speed cubic-bezier(0.545, 0.08, 0.52, 0.975) infinite;
+
+                        .drop {
+                            animation: vertical $speed cubic-bezier(0.545, 0.08, 0.52, 0.975) infinite;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-.bubble:nth-child(1) {
-    width: 20px;
-    height: 20px;
-    left: 30%;
-    animation-duration: 6s;
-}
-
-.bubble:nth-child(2) {
-    left: 20%;
-    animation-duration: 3.5s;
-}
-
-.bubble:nth-child(3) {
-    width: 30px;
-    height: 30px;
-    left: 30%;
-    animation-duration: 7s;
-}
-
-.bubble:nth-child(4) {
-    width: 50px;
-    height: 50px;
-    left: 67%;
-    animation-duration: 6s;
-}
-
-.bubble:nth-child(5) {
-    width: 20px;
-    height: 20px;
-    left: 70%;
-    animation-duration: 4.5s;
-}
-
-@keyframes bubble {
+@keyframes horizontalRight {
     0% {
-        bottom: -100px;
-        transform: translateX(0);
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(85px);
     }
     50% {
-        transform: translateX(100px);
+        transform: translateX(60px);
     }
     100% {
-        bottom: 1000px;
+        transform: translateX(-100px);
     }
 }
+@keyframes horizontalLeft {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(-85px);
+    }
+    50% {
+        transform: translateX(-60px);
+    }
+    100% {
+        transform: translateX(100px);
+    }
+}
+@keyframes vertical {
+    0% {
+        transform: translateY(0px) scale(0.5);
+    }
+    18% {
+        transform: translateY(8px) scale(1.1);
+    }
+    35% {
+        transform: translateY(-10px) scale(1);
+    }
+    100% {
+        transform: translateY(240px) scale(0);
+    }
+}
+
+

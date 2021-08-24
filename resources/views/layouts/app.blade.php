@@ -21,6 +21,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/icheck-bootstrap/3.0.1/icheck-bootstrap.min.css">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -72,13 +73,6 @@
         </div>
     </div>
     @yield('content')
-    <div class="bubbles">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-    </div>
 
 </body>
 

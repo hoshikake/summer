@@ -1,41 +1,29 @@
 $sub-color: #eee;
 
-// $breakpoints: (
-//   'sm': 'screen and (max-width: 540px)',
-//   'md': 'screen and (max-width: 740px)',
-//   'lg': 'screen and (min-width: 1350px)',
-
-// ) !default;
-
-// @mixin mq($breakpoint: md){
-//     @media #{map-get($breakpoints, $breakpoint)}{
-//         @content;
-//     }
-// }
-
-
-.flex-between{
+.flex-between {
     display: flex;
     justify-content: space-between;
 }
-.flex-center{
+.flex-center {
     display: flex;
     justify-content: center;
 }
-.flex-clear{
-    @include mq(md){
+.flex-clear {
+    @include mq(md) {
         display: inline-block;
         margin: 0 auto 3em auto;
     }
 }
 
-.container{
+.container {
     padding: 1em 0;
     background-color: $sub-color;
-    a{
+    a {
+        color: #222;
         margin: 0 2em;
     }
-    li{
+    li {
+        color: #222;
         list-style: none;
         margin: 0 2em;
     }
@@ -49,30 +37,29 @@ $sub-color: #eee;
     list-style-type: none;
     color: #fff;
     padding: 0;
-    margin: 0 2em;
-  }
+}
 
-  .menu li {
+.menu li {
     position: relative;
     width: 100px;
     margin-left: 1px;
     padding: 5px;
     background: $sub-color;
     margin: 0;
-  }
+}
 
-  .menu-sub {
+.menu-sub {
     position: absolute;
     right: 0;
     padding: 5px;
     display: none;
-  }
+}
 
-  .menu .menu-margin{
-      margin-top: 11px;
-  }
+.menu .menu-margin {
+    margin-top: 11px;
+}
 
-  .menu-sub li a {
+.menu-sub li a {
     padding: 5px;
     margin-left: -5px;
     margin-right: -5px;
@@ -80,37 +67,37 @@ $sub-color: #eee;
     display: block;
     color: #333;
     text-decoration: none;
-  }
+}
 
-  .menu-sub li a:hover {
-    background: #6989bb;
-  }
-
+.menu-sub li a:hover {
+    background: #ddd;
+}
 
 //   login
 
-.login-container{
-    .card{
+.login-container {
+    .card {
         width: 300px;
         height: 300px;
         background-color: rgba(238, 238, 238, 0.616);
         margin: 2em auto;
-        border-radius: 50%;
-        .card-header{
+        border-radius: 10%;
+        .card-header {
             margin: 6em 4em 2em 4em;
             padding: 3em 0 1em 0;
             border-bottom: 1px solid #333;
         }
-        .github-link{
-            a{
+        .github-link {
+            a {
                 display: inline-block;
                 margin: 1em 2em 2em 2em;
                 padding: 1em 2em;
-                border: 1px solid #6b9cb2;
                 border-radius: 10px;
-                background-color: #57b2dc;
-                &:hover{
-                    box-shadow: 2px 1px 2px #6989bb;
+                background-color: #222;
+                color: $sub-color;
+                &:hover {
+                    background-color: $sub-color;
+                    color: #222;
                 }
             }
         }
@@ -119,137 +106,151 @@ $sub-color: #eee;
 
 // ギャラリー
 
-.gallery-container{
-    .gallery-title{
+.gallery-container {
+    .gallery-title {
         margin: 2em 0;
     }
 
-    .gallery-main{
-        .gallery-comment{
-            p{
-                color: #eee;
-            }
+    .gallery-main {
+        .gallery-comment {
         }
-
     }
-    .card{
+    .card {
         width: 300px;
         height: 300px;
         background-color: rgba(238, 238, 238, 0.616);
         margin: 2em;
-        border-radius: 50%;
-        .card-header{
+        border-radius: 10%;
+        @include mq(md) {
+            margin: 1rem 0;
+        }
+        .card-header {
             margin: 1em 4em 1em 4em;
             padding: 1em 0 1em 0;
             border-bottom: 1px solid #333;
         }
-        .gallery-link p{
+        .gallery-link p {
             margin: 1em 0;
         }
-        .gallery-link a{
+        .gallery-link a {
             font-size: 1em;
             padding: 0.2em;
             margin: 0.5em auto;
-            border: 1px solid #6b9cb2;
             border-radius: 10px;
-            background-color: #57b2dc;
+            background-color: #222;
+            color: $sub-color;
             display: block;
             width: 120px;
-            &:hover{
-                box-shadow: 2px 1px 2px #6989bb;
+            &:hover {
+                background-color: $sub-color;
+                color: #222;
             }
         }
     }
-    .gallery-comment{
+    .gallery-comment {
         width: 300px;
         overflow-wrap: break-word;
         margin: auto 2em;
+        @include mq(md) {
+            margin: 0;
+        }
+        p {
+            color: #eee;
+            text-align: left;
+        }
     }
 }
 // Twitter登録
-.twitter-container{
-    .twitter-complete{
+.twitter-container {
+    .twitter-complete {
         margin: 2em;
     }
-    .card{
+    .card {
         width: 300px;
         height: 300px;
         background-color: rgba(238, 238, 238, 0.616);
         margin: 2em auto;
-        border-radius: 50%;
-        .card-header{
+        border-radius: 10%;
+        .card-header {
             margin: 6em 4em 3em 4em;
             padding: 2em 0 1em 0;
             border-bottom: 1px solid #333;
         }
-        .twitter-text{
+        .twitter-text {
             margin: 1em 0.5em;
         }
-        .twitter-form{
+        .twitter-form {
             outline: none;
             border: 1px solid #333;
             border-radius: 10px;
             padding: 0.5em 0;
             margin: 0 0.5em;
+            color: #222;
         }
-        .twitter-btn{
+        .twitter-btn {
             display: inline-block;
             margin: 3em 2em 2em 2em;
             padding: 1em 2em;
-            border: 1px solid #6b9cb2;
             border-radius: 10px;
-            background-color: #57b2dc;
-            &:hover{
-                box-shadow: 2px 1px 2px #6989bb;
+            background-color: #222;
+            color: $sub-color;
+            &:hover {
+                background-color: $sub-color;
+                color: #222;
             }
         }
     }
 }
 // サイト登録
-.site-container{
-    .card{
+.site-container {
+    .card {
         width: 300px;
-        height: 300px;
+        height: 280px;
         background-color: rgba(238, 238, 238, 0.616);
         margin: 2em auto;
-        border-radius: 50%;
-        .card-header{
+        border-radius: 10%;
+        .card-header {
             margin: 6em 4em 1em 4em;
             padding: 2em 0 1em 0;
             border-bottom: 1px solid #333;
         }
-        .site-form{
+        .site-form {
             font-size: 0.5em;
-            .site-form-text{
+            .site-form-text {
                 outline: none;
                 border: 1px solid #333;
                 border-radius: 10px;
                 display: block;
                 margin: 0 auto;
                 padding: 4px;
+                color: #222;
             }
-            .site-comment{
+            .site-comment {
                 display: block;
             }
-            .site-textarea{
+            .site-textarea {
                 outline: none;
                 border: 1px solid #333;
                 border-radius: 10px;
                 resize: none;
+                color: #222;
+                padding: 2px;
+                text-align: left;
             }
-            .site-checkbox{
+            .site-checkbox {
                 margin: 1em;
             }
-            .site-btns{
+            .site-btns {
                 margin: 1em;
-                .site-btn{
+                .site-btn {
                     display: inline-block;
-                    padding: 0.1em;
-                    border: 1px solid #6b9cb2;
-                    border-radius: 10px;
-                    background-color: #57b2dc;
-                    &:hover{
-                        box-shadow: 2px 1px 2px #6989bb;
+                    padding: 0.2em;
+                    border-radius: 5px;
+                    background-color: #222;
+                    color: $sub-color;
+                    &:hover {
+                        background-color: $sub-color;
+                        color: #222;
                     }
                 }
             }
@@ -257,101 +258,142 @@ $sub-color: #eee;
     }
 }
 // コメントページ
-.comment-top{
-    .comment-title{
+.comment-top {
+    .comment-title {
         margin: 2em 0;
     }
-    .card{
+    .card {
         width: 300px;
         height: 300px;
         background-color: rgba(238, 238, 238, 0.616);
         margin: 2em auto;
-        border-radius: 50%;
-        .card-header{
+        border-radius: 10%;
+        .card-header {
             margin: 6em 4em 1em 4em;
             padding: 2em 0 1em 0;
             border-bottom: 1px solid #333;
         }
-        .comment-link a{
+        .comment-link a {
             font-size: 1em;
             padding: 0.2em;
             margin: 0.5em auto;
-            border: 1px solid #6b9cb2;
             border-radius: 10px;
-            background-color: #57b2dc;
+            background-color: #222;
+            color: $sub-color;
             display: block;
             width: 120px;
-            &:hover{
-                box-shadow: 2px 1px 2px #6989bb;
+            &:hover {
+                background-color: $sub-color;
+                color: #222;
             }
         }
     }
 }
 
-.comment-container{
+.comment-container {
     background-color: rgba(238, 238, 238, 0.616);
-    margin: 5%;
+    margin: 5% 20%;
     margin-bottom: 3em;
     padding: 2em 0;
     border-radius: 45px;
-    .comment-text{
+    @include mq(md) {
+        margin: 5%;
+    }
+    .comment-text {
         display: block;
         margin: 0.5em;
     }
-    .comment-textarea, .form-edit-comment{
+    .comment-textarea,
+    .form-edit-comment {
         width: 400px;
         height: 100px;
         outline: none;
         padding: 0.3em;
         border: 1px solid #333;
         border-radius: 10px;
+        color: #222;
         resize: none;
-        @include mq(sm){
-            width: 280px;
+        text-align: left;
+        @include mq(sm) {
+            width: 260px;
         }
     }
-    .comment-post{
+    .comment-post {
         margin-top: 1em;
     }
-    .comment-list{
+    .comment-list {
         margin-top: 1em;
     }
-    .comment{
+    .comment-wrapper {
+        text-align: left;
+        img {
+            margin-left: 2rem;
+        }
+    }
+    .comment {
         overflow-wrap: break-word;
         width: 400px;
-        margin: 0 auto;
-        @include mq(sm){
-            width: 280px;
+        margin: 0 0 0 6vw;
+        color: #222;
+        text-align: left;
+        @include mq(sm) {
+            width: 260px;
         }
     }
-    .comment-edit{
+    .comment-name {
+        text-align: right;
+        margin-right: 2rem;
+        color: #222;
+    }
+    a {
+        color: #222;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .comment-edit {
         margin-bottom: 1em;
     }
-    .comment-btn, .btn-update-comment, .btn-destroy-comment{
+    .comment-btn,
+    .btn-update-comment,
+    .btn-destroy-comment {
         display: inline-block;
-        padding: 0.1em;
-        border: 1px solid #6b9cb2;
-        border-radius: 10px;
-        background-color: #57b2dc;
-        &:hover{
-            box-shadow: 2px 1px 2px #6989bb;
+        padding: 0.2em;
+        border-radius: 5px;
+        background-color: #222;
+        color: $sub-color;
+        &:hover {
+            background-color: $sub-color;
+            color: #222;
         }
     }
 }
-.pagination{
+.pagination {
     display: flex;
     justify-content: center;
     margin-top: 1em;
-    li{
+    li {
         list-style: none;
         margin: 0.2em;
         padding: 0.3em;
+        .page-link {
+            color: #222;
+        }
+        a {
+            &:hover {
+                color: #555;
+            }
+        }
+    }
+}
+.gallert-pagination{
+    .pagination{
         .page-link{
-            color: #bbb;
+            color: #eee;
         }
         a{
             &:hover{
-                color: $sub-color;
+                color: #aaa;
             }
         }
     }

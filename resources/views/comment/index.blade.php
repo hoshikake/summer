@@ -68,15 +68,18 @@
 
                     <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
                     <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
-                    @if ($comment->user->twitter_id)
-                        <a href="{{ $comment->user->twitter_url }}" class=""
-                            target="_blank">{{ $comment->user->name }}</a>
-                    @else
-                        {{ $comment->user->name }}
-                    @endif
-                    @if ($comment->user->id === Auth::user()->id)
-                        <button type="submit" class="comment-edit comment-btn btn-edit-comment">編集</button>
-                    @endif
+                    <div class="comment-name">
+
+                        @if ($comment->user->twitter_id)
+                            <a href="{{ $comment->user->twitter_url }}" class=""
+                                target="_blank">{{ $comment->user->name }}</a>
+                        @else
+                            {{ $comment->user->name }}
+                        @endif
+                        @if ($comment->user->id === Auth::user()->id)
+                            <button type="submit" class="comment-edit comment-btn btn-edit-comment">編集</button>
+                        @endif
+                    </div>
 
                 </div>
 
