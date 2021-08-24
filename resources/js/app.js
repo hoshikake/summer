@@ -31,6 +31,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 //     el: '#app',
 // });
 
-
 require('./event.js');
+require('./fireworks.js')
 

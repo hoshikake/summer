@@ -97,7 +97,7 @@ canvas.background {
 
 #face {
     position: absolute;
-    top: 61%;
+    top: 58%;
     left: 75%;
 
     .tear {
@@ -105,7 +105,7 @@ canvas.background {
         width: 48vw;
         height: 20vh;
         transform: translate(-50%, -50%);
-        filter: blur(10px) contrast(30);
+        filter: blur(8px) contrast(30);
 
         &_right {
             .drops {
@@ -176,7 +176,7 @@ canvas.background {
         transform: translateY(-10px) scale(1);
     }
     100% {
-        transform: translateY(250px) scale(0);
+        transform: translateY(240px) scale(0);
     }
 }
 
