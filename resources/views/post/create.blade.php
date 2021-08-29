@@ -22,6 +22,7 @@
                 class="site-form-text"
                 id="work_url" name="work_url"
                 value="{{ old('work_url') }}"
+                readonly
                 >
             @if ($errors->has('work_url'))
                 <div class="">
@@ -36,6 +37,7 @@
                 class="site-form-text"
                 id="repo_url" name="repo_url"
                 value="{{ old('repo_url') }}"
+                readonly
                 >
             @if ($errors->has('repo_url'))
                 <div class="">
@@ -47,7 +49,7 @@
             {{-- コメント --}}
             <label class="site-comment" for="comment">コメント</label>
             <textarea class="site-textarea"
-                id="comment" name="comment" rows="3">{{ old('comment') }}</textarea>
+                id="comment" name="comment" rows="3" readonly>{{ old('comment') }}</textarea>
             @if ($errors->has('comment'))
                 <div>
                     <strong>{{ $errors->first('comment') }}</strong>
